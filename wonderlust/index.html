@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amer &amp; Andia · Wonderlust</title>
+<meta name="description" content="Amer &amp; Andia are getting married on 22 November 2026. Your boarding pass to the wedding of the year.">
+<meta name="theme-color" content="#3A2A52">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italianno&family=Spectral:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#FFF7EE; --ink:#3A2A52; --soft:#7B6A8C; --sun:#F29B62; --rose:#E27D9E; --gold:#C79A4A; --dusk:#2F2147; --cream:#FFF3E3; --peach:#FBE0CB; --sky:#F6D6E3;
+  --paper:#FFFCF8; --line:rgba(58,42,82,.22);
+  --script:"Italianno","Snell Roundhand","Apple Chancery",cursive;
+  --serif:"Spectral","Iowan Old Style",Georgia,serif;
+  --label:"Barlow Condensed","Arial Narrow","Avenir Next Condensed",system-ui,sans-serif;
+  --gut:max(22px,env(safe-area-inset-left,0px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+html.locked,html.locked body{overflow:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17.5px/1.65 var(--serif);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+
+.label{font:600 13px/1.3 var(--label);letter-spacing:.3em;text-transform:uppercase;color:var(--soft)}
+.sec{position:relative;padding:80px var(--gut) 76px;text-align:center}
+.sec>.in{position:relative;z-index:2;max-width:780px;margin:0 auto}
+.sec h2{font:400 clamp(54px,15vw,80px)/1 var(--script);color:var(--ink);margin:6px 0 6px}
+.lead{max-width:36ch;margin:0 auto;font-size:clamp(17px,4.6vw,19.5px);line-height:1.7}
+.lead em{color:var(--rose);font-style:italic}
+.sample{display:inline-block;font:600 10px/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);border:1px dashed color-mix(in srgb,var(--soft) 60%,transparent);border-radius:99px;padding:4px 8px;vertical-align:middle;margin-left:6px;white-space:nowrap}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.show{opacity:1;transform:none}
+.cloud{position:absolute;pointer-events:none;z-index:1;opacity:.92;animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translateX(-10px)}to{transform:translateX(14px)}}
+
+/* ---------- intro ---------- */
+.intro{position:fixed;inset:0;z-index:100;background:#EDE8DC;display:flex;align-items:center;justify-content:center;cursor:pointer;border:0;padding:0;width:100%;text-align:center;overflow:hidden;transition:opacity 1.1s ease,visibility 0s linear 1.1s}
+.intro.gone{opacity:0;visibility:hidden;pointer-events:none}
+.intro .stage{position:absolute;left:50%;top:50%;width:max(100vw,calc(100vh*1080/1920));height:max(100vh,calc(100vw*1920/1080));transform:translate(-50%,-50%)}
+@supports (height:100svh){.intro .stage{width:max(100vw,calc(100svh*1080/1920));height:max(100svh,calc(100vw*1920/1080))}}
+.intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.intro .fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,#FBF6EC,#E8DFCF)}
+.intro .fallback img{width:min(60vw,260px)}
+.intro.novideo video{display:none}
+.intro.novideo .fallback{display:flex}
+.intro .top,.intro .bottom{position:absolute;left:0;right:0;z-index:2;padding:0 24px;transition:opacity .7s ease}
+.intro .top{top:max(8%,40px)}
+.intro .ticket{display:inline-block;padding:16px 30px 12px;background:rgba(255,252,246,.88);border:1px solid rgba(58,42,82,.3);border-radius:4px;box-shadow:0 10px 30px rgba(58,42,82,.16);position:relative}
+.intro .ticket::before,.intro .ticket::after{content:"";position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:#EDE8DC;border:1px solid rgba(58,42,82,.3);transform:translateY(-50%)}
+.intro .ticket::before{left:-8px}.intro .ticket::after{right:-8px}
+.intro .names{font:400 clamp(46px,13.4vw,62px)/1.05 var(--script);color:var(--ink);margin-top:2px;white-space:nowrap}
+.intro .bottom{bottom:max(8%,40px);display:flex;flex-direction:column;align-items:center;gap:14px}
+.intro .tap{font:600 14px/1 var(--label);letter-spacing:.32em;text-transform:uppercase;color:var(--paper);background:var(--dusk);animation:pulse 2.4s ease-in-out infinite;padding:15px 24px;border-radius:99px;box-shadow:0 8px 20px rgba(47,33,71,.3)}
+.intro .music-opt{font:600 13px/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--ink);background:rgba(255,252,246,.7);border:0;border-radius:99px;padding:10px 14px;cursor:pointer;text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(58,42,82,.4)}
+.intro.opening .top,.intro.opening .bottom{opacity:0}
+@keyframes pulse{50%{opacity:.65}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;background:#47305A;display:flex;justify-content:center}
+.hero-media{position:absolute;inset:0;display:flex;justify-content:center}
+.hero-media video{height:100%;width:100%;max-width:calc(100vh*9/16);object-fit:cover}
+@supports (height:100svh){.hero-media video{max-width:calc(100svh*9/16)}}
+@media (min-aspect-ratio:3/4){.hero-media video{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(47,33,71,.72) 0,rgba(47,33,71,.3) 30%,rgba(47,33,71,0) 46%),linear-gradient(0deg,rgba(47,33,71,.7) 0,rgba(47,33,71,0) 24%)}
+.hero-copy{position:relative;z-index:2;width:100%;max-width:560px;padding:max(7vh,50px) 22px 0;text-align:center;color:#FFF6EA;text-shadow:0 2px 20px rgba(30,18,52,.7)}
+.hero .eyebrow{font:600 14px/1 var(--label);letter-spacing:.38em;text-transform:uppercase;color:#FFE3C4}
+.hero h1{font:400 clamp(64px,19vw,110px)/.95 var(--script);margin:10px 0 2px}
+.hero h1 .amp{font-size:.62em;color:#FFC59A;padding:0 .08em}
+.hero .date{font:600 15px/1.2 var(--label);letter-spacing:.34em;text-transform:uppercase;margin-top:8px}
+.hero .place{font:italic 400 17px/1.3 var(--serif);margin-top:6px;color:#FFEFE0}
+.hero .place .sample{color:#FFEFE0;border-color:rgba(255,255,255,.55)}
+.hero .cue{position:absolute;z-index:2;bottom:max(26px,env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center}
+.hero .cue a{text-decoration:none;font:600 13px/1 var(--label);letter-spacing:.3em;text-transform:uppercase;color:#FFF6EA;display:inline-flex;flex-direction:column;align-items:center;gap:10px}
+.hero .cue a::after{content:"";width:9px;height:9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(5px) rotate(45deg)}}
+.hero .rise{opacity:0;transform:translateY(14px);transition:opacity 1.3s ease,transform 1.3s ease;transition-delay:var(--d,0s)}
+body.opened .hero .rise{opacity:1;transform:none}
+
+/* ---------- countdown ---------- */
+.count-sec{background:linear-gradient(180deg,#47305A 0,#C98AA8 12%,var(--sky) 34%,var(--cream) 100%);overflow:hidden;padding-top:96px}
+.count-sec .cloud.a{width:240px;left:-90px;top:60px;opacity:.7}
+.count-sec .cloud.b{width:200px;right:-80px;bottom:30px}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:420px;margin:24px auto 0;padding:24px 10px 20px;background:rgba(255,252,246,.82);border:1px solid rgba(255,255,255,.95);border-radius:20px;box-shadow:0 18px 44px rgba(58,42,82,.2);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.count div{display:flex;flex-direction:column;gap:8px;align-items:center}
+.count b{font:500 clamp(36px,10.5vw,52px)/1 var(--label);font-variant-numeric:tabular-nums;color:var(--ink)}
+.count span{font:600 12px/1 var(--label);letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}
+.count-note{margin-top:22px;font-style:italic;color:var(--soft);font-size:18px}
+.count-sec h2,.count-sec .label{color:var(--dusk)}
+
+/* ---------- boarding pass ---------- */
+.board{background:var(--cream)}
+.board .train{width:min(100%,460px);margin:0 auto 8px;filter:drop-shadow(0 16px 20px rgba(58,42,82,.2))}
+.pass{max-width:440px;margin:34px auto 0;background:var(--paper);border-radius:16px;box-shadow:0 20px 50px rgba(58,42,82,.2);text-align:left;position:relative;overflow:hidden;border:1px solid var(--line)}
+.pass .head{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:linear-gradient(100deg,var(--dusk),#6C3F73);color:#FFF3E3;font:600 13px/1 var(--label);letter-spacing:.26em;text-transform:uppercase}
+.pass .body{padding:22px 20px 18px;display:grid;grid-template-columns:1fr 1fr;gap:18px 14px}
+.pass .cell h3{font:600 11.5px/1 var(--label);letter-spacing:.26em;text-transform:uppercase;color:var(--rose);margin-bottom:6px}
+.pass .cell p{font:500 20px/1.2 var(--serif)}
+.pass .cell small{display:block;font:italic 400 14.5px/1.35 var(--serif);color:var(--soft);margin-top:3px}
+.pass .cell.wide{grid-column:1/-1}
+.pass .route{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pass .route b{font:400 clamp(38px,11vw,48px)/1 var(--script);color:var(--ink)}
+.pass .route i{flex:1;height:0;border-top:2px dashed rgba(58,42,82,.3);position:relative}
+.pass .route i::after{content:"\2708";position:absolute;left:50%;top:-14px;transform:translateX(-50%) rotate(0);font-style:normal;font-size:22px;color:var(--sun);background:var(--paper);padding:0 6px}
+.pass .tear{position:relative;border-top:2px dashed rgba(58,42,82,.25);margin:0 12px}
+.pass .tear::before,.pass .tear::after{content:"";position:absolute;top:-14px;width:26px;height:26px;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 1px var(--line)}
+.pass .tear::before{left:-26px}.pass .tear::after{right:-26px}
+.pass .stub{padding:16px 20px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pass .bars{height:46px;flex:1;max-width:220px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 10px,var(--ink) 10px 13px,transparent 13px 15px);opacity:.82}
+.pass .seat{font:600 13px/1.3 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);text-align:right}
+.pass .seat b{display:block;font:500 28px/1 var(--label);letter-spacing:.1em;color:var(--ink)}
+
+/* ---------- itinerary ---------- */
+.itin{background:linear-gradient(180deg,var(--cream),var(--peach));overflow:hidden}
+.itin .fb{width:min(100%,640px);margin:0 auto 12px}
+.itin .cloud.a{width:220px;right:-90px;top:40%;opacity:.5}
+.legs{max-width:560px;margin:34px auto 0;text-align:left;position:relative}
+.legs::before{content:"";position:absolute;left:21px;top:12px;bottom:12px;border-left:2px dashed rgba(58,42,82,.3)}
+.leg{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:0 0 28px}
+.leg .dot{position:relative;z-index:2;width:44px;height:44px;border-radius:50%;background:var(--paper);border:2px solid var(--sun);display:grid;place-items:center;font-size:19px;color:var(--sun);box-shadow:0 6px 14px rgba(242,155,98,.3)}
+.leg .time{font:600 13px/1 var(--label);letter-spacing:.28em;text-transform:uppercase;color:var(--rose);margin:4px 0 4px}
+.leg h3{font:500 clamp(24px,6.4vw,29px)/1.15 var(--serif);color:var(--ink)}
+.leg p{font-size:16.5px;line-height:1.55;color:var(--soft);margin-top:4px;max-width:36ch}
+
+/* ---------- packing ---------- */
+.pack{background:var(--peach)}
+.pgrid{display:grid;gap:14px;margin:30px auto 0;max-width:760px;text-align:left}
+.pcard{padding:22px 20px;background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 26px rgba(58,42,82,.1)}
+.pcard h3{font:600 13px/1 var(--label);letter-spacing:.28em;text-transform:uppercase;color:var(--rose);margin-bottom:8px}
+.pcard p{font-size:17.5px;line-height:1.55}
+.pcard small{display:block;font:italic 400 14.5px/1.4 var(--serif);color:var(--soft);margin-top:6px}
+.swatches{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:26px 0 4px}
+.swatches i{display:block;width:42px;height:42px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6),0 6px 14px rgba(58,42,82,.2)}
+.swatches figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+.swatches figcaption{font:600 11px/1 var(--label);letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+@media (min-width:760px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- rsvp ---------- */
+.rsvp{background:linear-gradient(180deg,var(--peach),var(--sky) 60%,#D9B6D3);overflow:hidden}
+.rsvp .cloud.a{width:200px;left:-80px;bottom:60px;opacity:.85}
+.rsvp .fb{width:min(100%,560px);margin:0 auto 4px}
+form{display:flex;flex-direction:column;gap:22px;max-width:420px;margin:30px auto 0;text-align:left;padding:30px 24px 26px;background:rgba(255,252,248,.92);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 36px rgba(58,42,82,.2)}
+.f{display:flex;flex-direction:column;gap:8px}
+.f>label,.f>legend{font:600 12px/1.2 var(--label);letter-spacing:.24em;text-transform:uppercase;color:var(--soft);padding:0}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+input[type=text],input[type=email],input[type=number],textarea{font:400 19px/1.3 var(--serif);padding:8px 2px 10px;border:0;border-bottom:1px solid rgba(58,42,82,.35);background:transparent;border-radius:0;width:100%;color:var(--ink)}
+textarea{resize:vertical;min-height:70px}
+input:focus,textarea:focus{outline:0;border-bottom-color:var(--rose);box-shadow:0 1px 0 var(--rose)}
+.choice{display:flex;gap:8px}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice label{flex:1;text-align:center;cursor:pointer;padding:13px 6px;border:1px solid rgba(58,42,82,.3);border-radius:99px;font:600 13px/1.2 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);transition:background .25s,color .25s}
+.choice input:checked+label{background:var(--dusk);color:#fff;border-color:var(--dusk)}
+.choice input:focus-visible+label{outline:2px solid var(--rose);outline-offset:2px}
+.stepper{display:flex;align-items:center;gap:6px}
+.stepper button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(58,42,82,.3);background:transparent;font:400 24px/1 var(--serif);cursor:pointer;color:var(--ink)}
+.stepper input{width:64px;text-align:center;-moz-appearance:textfield;appearance:textfield}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.btn{font:600 14px/1 var(--label);letter-spacing:.3em;text-transform:uppercase;padding:18px;border:0;background:linear-gradient(100deg,var(--sun),var(--rose));color:#fff;cursor:pointer;border-radius:99px;transition:filter .25s,transform .25s;text-shadow:0 1px 2px rgba(58,42,82,.3)}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:scale(.98)}
+.fine-note{font:italic 400 14.5px/1.4 var(--serif);color:var(--soft);text-align:center;margin-top:-6px}
+.thanks{max-width:420px;margin:30px auto 0}
+.thanks[hidden],form[hidden]{display:none}
+.thanks .vid{border-radius:200px 200px 16px 16px;overflow:hidden;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--gold),0 20px 44px rgba(58,42,82,.3);aspect-ratio:9/16;max-width:250px;margin:0 auto 26px;background:#CDB79A}
+.thanks .vid video{width:100%;height:100%;object-fit:cover}
+.thanks h3{font:400 clamp(46px,13vw,62px)/1.05 var(--script);color:var(--ink)}
+.thanks p{margin-top:8px;font-size:19px}
+.thanks .again{margin-top:18px;background:none;border:0;font:600 13px/1 var(--label);letter-spacing:.22em;text-transform:uppercase;color:var(--rose);text-decoration:underline;text-underline-offset:5px;cursor:pointer;padding:10px}
+
+/* ---------- footer ---------- */
+footer{position:relative;text-align:center;padding:50px var(--gut) calc(48px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,#D9B6D3,var(--dusk) 70%);color:#FFF3E3;overflow:hidden}
+footer .fb{width:min(100%,520px);margin:0 auto}
+footer .cloud{width:180px;left:-70px;top:30px;opacity:.5}
+footer .names{font:400 clamp(54px,15vw,76px)/1.05 var(--script);position:relative}
+footer .names span{color:#FFC59A}
+footer .date{margin-top:6px;font:600 14px/1.4 var(--label);letter-spacing:.32em;text-transform:uppercase;color:#FFE3C4}
+footer small{display:block;margin-top:18px;font:italic 400 15.5px/1.5 var(--serif);color:#E9DCEB}
+
+/* ---------- music button ---------- */
+.music{position:fixed;z-index:60;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(255,252,248,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 8px 22px rgba(47,33,71,.3);cursor:pointer;display:grid;place-items:center;color:var(--dusk);opacity:0;visibility:hidden;transform:scale(.8);transition:opacity .6s,transform .6s,visibility 0s linear .6s}
+body.opened .music{opacity:1;visibility:visible;transform:none;transition-delay:.4s,.4s,0s}
+.music svg{width:22px;height:22px}
+.music .off{display:block}.music .on{display:none}
+.music[aria-pressed="true"] .off{display:none}
+.music[aria-pressed="true"] .on{display:flex;gap:3px;align-items:flex-end;height:18px}
+.music .on i{display:block;width:3px;background:currentColor;border-radius:2px;animation:eq 1s ease-in-out infinite}
+.music .on i:nth-child(1){height:8px}.music .on i:nth-child(2){height:16px;animation-delay:-.4s}.music .on i:nth-child(3){height:11px;animation-delay:-.7s}.music .on i:nth-child(4){height:14px;animation-delay:-.2s}
+@keyframes eq{50%{transform:scaleY(.4);transform-origin:bottom}}
+
+@media (min-width:700px){.sec{padding-top:108px;padding-bottom:100px}.count-sec .cloud.a{width:360px;left:2vw}.count-sec .cloud.b{width:320px;right:2vw}.itin .cloud.a{right:3vw;width:300px}.rsvp .cloud.a{left:3vw;width:280px}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important}
+  .js .rv,.hero .rise{transition-duration:.01s!important;transition-delay:0s!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ INTRO: THE ENVELOPE ============ -->
+<div class="intro" id="intro" role="button" tabindex="0" aria-label="Open the invitation">
+  <div class="stage">
+    <video id="introVideo" muted playsinline preload="auto" poster="assets/intro-poster.webp" aria-hidden="true">
+      <source src="assets/intro-video.mp4" type="video/mp4">
+    </video>
+    <div class="fallback" aria-hidden="true"><img src="assets/cloud.webp" alt="" width="400" height="400"></div>
+  </div>
+  <div class="top">
+    <div class="ticket">
+      <div class="label">Your ticket to a wedding</div>
+      <div class="names">Amer &amp; Andia</div>
+    </div>
+  </div>
+  <div class="bottom">
+    <span class="tap">Tap to board</span>
+    <button class="music-opt" id="openMusic" type="button">&#9835; Open with music</button>
+  </div>
+</div>
+
+<!-- ============ HERO: FLYING CARPET ============ -->
+<header class="hero" id="top">
+  <div class="hero-media">
+    <video id="heroVideo" muted loop playsinline preload="auto" poster="assets/hero-poster.webp" aria-hidden="true">
+      <source src="assets/hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-copy">
+    <div class="eyebrow rise" style="--d:.5s">Together we fly</div>
+    <h1 class="rise" style="--d:.8s">Amer <span class="amp">&amp;</span> Andia</h1>
+    <div class="date rise" style="--d:1.2s">22 November 2026</div>
+    <div class="place rise" style="--d:1.4s">Skyline Terrace <span class="sample">sample venue</span></div>
+  </div>
+  <div class="cue rise" style="--d:2.2s"><a href="#countdown">Scroll</a></div>
+</header>
+
+<main>
+<!-- ============ COUNTDOWN ============ -->
+<section class="sec count-sec" id="countdown" aria-labelledby="cd-h">
+  <img class="cloud a" src="assets/cloud.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
+  <img class="cloud b" src="assets/cloud.webp" alt="" width="200" height="200" loading="lazy" decoding="async" style="animation-delay:-6s">
+  <div class="in">
+    <div class="label rv">Departure in</div>
+    <h2 id="cd-h" class="rv" style="--d:.1s">Counting down</h2>
+    <div class="count rv" id="count" style="--d:.2s" role="timer" aria-live="off" aria-label="Time until the wedding">
+      <div><b data-u="d">00</b><span>Days</span></div>
+      <div><b data-u="h">00</b><span>Hours</span></div>
+      <div><b data-u="m">00</b><span>Mins</span></div>
+      <div><b data-u="s">00</b><span>Secs</span></div>
+    </div>
+    <p class="count-note rv" id="countNote" style="--d:.3s">Sunday, 22 November 2026</p>
+  </div>
+</section>
+
+<!-- ============ BOARDING PASS ============ -->
+<section class="sec board" id="pass" aria-labelledby="bp-h">
+  <div class="in">
+    <img class="train rv" src="assets/train.webp" alt="A pink and gold steam locomotive trailing pink cherry blossoms" width="460" height="460" loading="lazy" decoding="async">
+    <div class="label rv">All aboard</div>
+    <h2 id="bp-h" class="rv">Your boarding pass</h2>
+    <p class="lead rv">Pack your sense of adventure. <em>Amer &amp; Andia</em> are setting off on their greatest journey, and you hold a seat on the wedding express.</p>
+
+    <div class="pass rv" role="group" aria-label="Wedding boarding pass">
+      <div class="head"><span>Boarding pass</span><span>Wonderlust Air</span></div>
+      <div class="body">
+        <div class="cell wide">
+          <h3>Route</h3>
+          <div class="route"><b>Amer</b><i></i><b>Andia</b></div>
+        </div>
+        <div class="cell"><h3>Date</h3><p>22 Nov 2026<small>Sunday</small></p></div>
+        <div class="cell"><h3>Boarding</h3><p>3:30 PM<small>Ceremony 4:00 PM <span class="sample">sample time</span></small></p></div>
+        <div class="cell"><h3>Gate</h3><p>Skyline Terrace<small>9 Cloud Avenue <span class="sample">sample</span></small></p></div>
+        <div class="cell"><h3>Reply by</h3><p>8 Nov 2026<small><span class="sample">sample date</span></small></p></div>
+      </div>
+      <div class="tear" aria-hidden="true"></div>
+      <div class="stub">
+        <div class="bars" aria-hidden="true"></div>
+        <div class="seat">Seat<b>1A &amp; 1B</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ITINERARY ============ -->
+<section class="sec itin" id="itinerary" aria-labelledby="it-h">
+  <img class="cloud a" src="assets/cloud.webp" alt="" width="220" height="220" loading="lazy" decoding="async">
+  <div class="in">
+    <img class="fb rv" src="assets/floral-bow.webp" alt="" width="640" height="272" loading="lazy" decoding="async">
+    <div class="label rv">Flight plan</div>
+    <h2 id="it-h" class="rv">The journey</h2>
+    <p class="lead rv"><span class="sample" style="margin:0 0 6px">sample times</span><br>Timings are placeholders until the couple confirms.</p>
+    <div class="legs">
+      <div class="leg rv"><div class="dot" aria-hidden="true">&#9992;</div><div><div class="time">3:30 PM</div><h3>Check-in &amp; boarding</h3><p>Find your seat, say hello, and collect a welcome drink.</p></div></div>
+      <div class="leg rv"><div class="dot" aria-hidden="true">&#9825;</div><div><div class="time">4:00 PM</div><h3>Take-off: the ceremony</h3><p>Amer &amp; Andia say their vows, high above the ordinary.</p></div></div>
+      <div class="leg rv"><div class="dot" aria-hidden="true">&#10024;</div><div><div class="time">5:00 PM</div><h3>Cocktails at altitude</h3><p>Sunset, sparkling toasts and a little music on deck.</p></div></div>
+      <div class="leg rv"><div class="dot" aria-hidden="true">&#127860;</div><div><div class="time">6:30 PM</div><h3>In-flight dinner</h3><p>A multi-course feast served among the clouds.</p></div></div>
+      <div class="leg rv"><div class="dot" aria-hidden="true">&#9835;</div><div><div class="time">8:30 PM</div><h3>Dancing across time zones</h3><p>Kick off your shoes. The dance floor is open until we land.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKING LIST ============ -->
+<section class="sec pack" id="pack" aria-labelledby="pk-h">
+  <div class="in">
+    <div class="label rv">Before you fly <span class="sample">sample info</span></div>
+    <h2 id="pk-h" class="rv">Packing list</h2>
+    <p class="lead rv">Dress for a sunset celebration: flowing fabrics, warm tones and comfortable shoes.</p>
+    <div class="swatches rv" aria-label="Suggested colours">
+      <figure><i style="background:#F29B62"></i><figcaption>Sunset</figcaption></figure>
+      <figure><i style="background:#E27D9E"></i><figcaption>Rose</figcaption></figure>
+      <figure><i style="background:#B79AD1"></i><figcaption>Dusk</figcaption></figure>
+      <figure><i style="background:#F6D6E3"></i><figcaption>Cloud</figcaption></figure>
+      <figure><i style="background:#C79A4A"></i><figcaption>Gold</figcaption></figure>
+    </div>
+    <div class="pgrid">
+      <div class="pcard rv"><h3>Arrive</h3><p>Valet and shuttle service will meet you at the terrace entrance.</p><small>Please arrive 30 minutes early</small></div>
+      <div class="pcard rv" style="--d:.08s"><h3>Stay</h3><p>Rooms are held at the Cloud Nine Hotel, five minutes away.</p><small>Mention &ldquo;Amer &amp; Andia&rdquo;</small></div>
+      <div class="pcard rv" style="--d:.16s"><h3>Weather</h3><p>Evenings can be cool. A wrap or jacket is a good idea.</p><small>The terrace is covered if it rains</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section class="sec rsvp" id="rsvp" aria-labelledby="rs-h">
+  <img class="cloud a" src="assets/cloud.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+  <div class="in">
+    <img class="fb rv" src="assets/floral-bow.webp" alt="A garland of wildflowers and butterflies tied with a pink bow" width="560" height="238" loading="lazy" decoding="async">
+    <div class="label rv">Confirm your seat by 8 November <span class="sample">sample</span></div>
+    <h2 id="rs-h" class="rv">Will you join us?</h2>
+
+    <form id="rsvpForm" class="rv" novalidate>
+      <div class="f">
+        <label for="g-name">Passenger name</label>
+        <input id="g-name" name="name" type="text" autocomplete="name" required placeholder="Full name">
+      </div>
+      <fieldset class="f">
+        <legend>Attending</legend>
+        <div class="choice">
+          <input type="radio" name="att" id="att-yes" value="yes" checked><label for="att-yes">Joyfully yes</label>
+          <input type="radio" name="att" id="att-no" value="no"><label for="att-no">Sadly no</label>
+        </div>
+      </fieldset>
+      <div class="f" id="guestsBox">
+        <label for="g-count">Number of guests</label>
+        <div class="stepper">
+          <button type="button" id="minus" aria-label="One fewer guest">&minus;</button>
+          <input id="g-count" name="guests" type="number" min="1" max="10" value="2" inputmode="numeric">
+          <button type="button" id="plus" aria-label="One more guest">+</button>
+        </div>
+      </div>
+      <div class="f">
+        <label for="g-note">A note for the couple <span style="letter-spacing:.1em;text-transform:none;font-style:italic">(optional)</span></label>
+        <textarea id="g-note" name="note" rows="2" placeholder="Dietary needs, song requests, a kind word…"></textarea>
+      </div>
+      <button class="btn" type="submit">Confirm my seat</button>
+      <!-- Front-end preview only: replies are not stored or sent anywhere yet. Wire to your form service, then remove this note. -->
+      <p class="fine-note">Preview form: replies are not sent anywhere yet.</p>
+    </form>
+
+    <div class="thanks" id="thanks" hidden aria-live="polite">
+      <div class="vid"><video id="thanksVideo" muted loop playsinline preload="none" poster="assets/rsvp-poster.webp" aria-hidden="true"><source src="assets/rsvp-celebration.mp4" type="video/mp4"></video></div>
+      <h3 id="thanksTitle">Thank you</h3>
+      <p id="thanksText"></p>
+      <button class="again" id="again" type="button">Edit my reply</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <img class="cloud" src="assets/cloud.webp" alt="" width="180" height="180" loading="lazy" decoding="async">
+  <img class="fb" src="assets/floral-bow.webp" alt="" width="520" height="221" loading="lazy" decoding="async">
+  <div class="names">Amer <span>&amp;</span> Andia</div>
+  <div class="date">22 November 2026</div>
+  <small>Bon voyage. Venue, times and dates are samples until confirmed.</small>
+</footer>
+
+<!-- ============ MUSIC ============ -->
+<audio id="bgm" src="assets/background-music.mp3" loop preload="none"></audio>
+<button class="music" id="music" type="button" aria-pressed="false" aria-label="Play background music" title="Music">
+  <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
+  <span class="on" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+</button>
+
+<script>
+window.CFG={date:'2026-11-22T16:00:00',introMs:4800,yesText:'Your seat is saved. We cannot wait to take off with you.',noText:'Thank you for letting us know. We will carry you with us on the journey.'};
+(function(){
+  var C=window.CFG||{};
+  var doc=document.documentElement, body=document.body;
+  doc.classList.add('js');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var WEDDING=new Date(C.date||'2026-11-22T18:00:00'); // sample time until confirmed
+  function $(id){return document.getElementById(id)}
+
+  /* ---------- music (never autoplays) ---------- */
+  var bgm=$('bgm'), mBtn=$('music');
+  function setMusic(on){
+    if(!mBtn)return;
+    mBtn.setAttribute('aria-pressed',on?'true':'false');
+    mBtn.setAttribute('aria-label',on?'Pause background music':'Play background music');
+  }
+  function playMusic(){
+    if(!bgm)return;
+    try{bgm.volume=.6;var p=bgm.play();if(p&&p.then)p.then(function(){setMusic(true)},function(){setMusic(false)});else setMusic(true)}catch(e){setMusic(false)}
+  }
+  if(mBtn&&bgm)mBtn.addEventListener('click',function(){
+    if(bgm.paused)playMusic();else{bgm.pause();setMusic(false)}
+  });
+  window.__playMusic=playMusic;
+
+  /* ---------- intro ---------- */
+  var intro=$('intro'), iv=$('introVideo'), heroV=$('heroVideo'), opened=false;
+  function startHero(){try{if(heroV){var p=heroV.play();if(p&&p.catch)p.catch(function(){})}}catch(e){}}
+  function reveal(){
+    if(body.classList.contains('opened'))return;
+    body.classList.add('opened');
+    if(intro)intro.classList.add('gone');
+    doc.classList.remove('locked');
+    window.scrollTo(0,0);
+    startHero();
+    if(iv)setTimeout(function(){try{iv.pause()}catch(e){}},1300);
+    if(window.onOpened)try{window.onOpened()}catch(e){}
+  }
+  window.__reveal=reveal;
+  function openInvite(withMusic){
+    if(opened)return; opened=true;
+    if(withMusic)playMusic();
+    intro.classList.add('opening');
+    if(!iv||reduce||intro.classList.contains('novideo')){setTimeout(reveal,reduce?50:(C.noVideoMs||1200));return}
+    var done=false;function fin(){if(!done){done=true;reveal()}}
+    iv.addEventListener('ended',function(){setTimeout(fin,C.endDelay||150)});
+    iv.addEventListener('error',fin);
+    setTimeout(fin,C.introMs||4200); // safety net if the video stalls or can't play
+    try{var p=iv.play();if(p&&p.catch)p.catch(function(){setTimeout(fin,900)})}catch(e){setTimeout(fin,900)}
+  }
+  if(intro){
+    doc.classList.add('locked');
+    if(iv){
+      iv.addEventListener('error',function(){intro.classList.add('novideo')},true);
+      var s0=iv.querySelector('source'); if(s0)s0.addEventListener('error',function(){intro.classList.add('novideo')});
+    }
+    intro.addEventListener('click',function(e){
+      if(e.target.closest('#openMusic'))return;
+      if(opened){if(C.skippable)reveal();return}
+      openInvite(false);
+    });
+    intro.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target===intro){e.preventDefault();openInvite(false)}});
+    var om=$('openMusic');
+    if(om)om.addEventListener('click',function(e){e.stopPropagation();openInvite(true)});
+  }else if(!C.manualOpen){
+    body.classList.add('opened');startHero();
+  }
+
+  /* ---------- countdown ---------- */
+  var cd={};['d','h','m','s'].forEach(function(u){cd[u]=document.querySelector('[data-u="'+u+'"]')});
+  var note=$('countNote');
+  function pad(n){return String(n).padStart(2,'0')}
+  function tick(){
+    if(!cd.d)return;
+    var ms=WEDDING-Date.now();
+    if(ms<=0){['d','h','m','s'].forEach(function(u){cd[u].textContent='00'});if(note)note.textContent='Today we celebrate!';return}
+    cd.d.textContent=pad(Math.floor(ms/864e5));
+    cd.h.textContent=pad(Math.floor(ms/36e5)%24);
+    cd.m.textContent=pad(Math.floor(ms/6e4)%60);
+    cd.s.textContent=pad(Math.floor(ms/1e3)%60);
+  }
+  tick();setInterval(tick,1000);
+
+  /* ---------- scroll reveals ---------- */
+  var items=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){io.observe(el)});
+  }else items.forEach(function(el){el.classList.add('show')});
+
+  /* ---------- rsvp (front-end preview only) ---------- */
+  var form=$('rsvpForm');
+  if(form){
+    var thanks=$('thanks'), tv=$('thanksVideo');
+    var cnt=$('g-count'), gBox=$('guestsBox');
+    function clamp(){var v=parseInt(cnt.value,10);if(isNaN(v)||v<1)v=1;if(v>10)v=10;cnt.value=v}
+    $('minus').addEventListener('click',function(){cnt.value=(parseInt(cnt.value,10)||1)-1;clamp()});
+    $('plus').addEventListener('click',function(){cnt.value=(parseInt(cnt.value,10)||1)+1;clamp()});
+    cnt.addEventListener('change',clamp);
+    [].forEach.call(form.querySelectorAll('input[name=att]'),function(r){
+      r.addEventListener('change',function(){gBox.style.display=$('att-yes').checked?'':'none'});
+    });
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var nameEl=$('g-name'), name=nameEl.value.trim();
+      if(!name){nameEl.focus();nameEl.setAttribute('aria-invalid','true');nameEl.placeholder='Please tell us your name';return}
+      nameEl.removeAttribute('aria-invalid');
+      var yes=$('att-yes').checked, first=name.split(/\s+/)[0];
+      $('thanksTitle').textContent=yes?'Thank you, '+first:'We will miss you, '+first;
+      $('thanksText').textContent=yes?(C.yesText||'We cannot wait to celebrate with you.'):(C.noText||'Thank you for letting us know. You will be in our hearts on the day.');
+      form.hidden=true;thanks.hidden=false;
+      if(tv){tv.parentNode.style.display=yes||C.videoBoth?'':'none';
+        if(yes||C.videoBoth){try{tv.currentTime=0;var p=tv.play();if(p&&p.catch)p.catch(function(){})}catch(err){}}}
+      thanks.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+    });
+    $('again').addEventListener('click',function(){
+      thanks.hidden=true;form.hidden=false;try{if(tv)tv.pause()}catch(e){}
+      form.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+    });
+  }
+})();
+
+</script>
+</body>
+</html>

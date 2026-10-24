@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amer &amp; Andia · Choose our invitation</title>
+<meta name="description" content="Twenty invitation designs for Amer &amp; Andia, 22 November 2026. Tap one to open it.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap">
+<style>
+:root{--bg:#F7F2EC;--ink:#2B2320;--soft:#7A6B63;--line:rgba(43,35,32,.14);--card:#FFFDF9;--accent:#A9786A;--pick:#B4485A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1C1816;--ink:#F3ECE6;--soft:#BBAA9F;--line:rgba(243,236,230,.14);--card:#26201D;--accent:#D4A493;--pick:#E57C8C}}
+:root[data-theme="dark"]{--bg:#1C1816;--ink:#F3ECE6;--soft:#BBAA9F;--line:rgba(243,236,230,.14);--card:#26201D;--accent:#D4A493;--pick:#E57C8C}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.55 "Cormorant Garamond",Georgia,serif;-webkit-font-smoothing:antialiased}
+header{text-align:center;padding:56px 16px 26px}
+.eyebrow{font:500 11px/1 Jost,system-ui,sans-serif;letter-spacing:.32em;text-transform:uppercase;color:var(--soft)}
+h1{font:400 clamp(52px,14vw,86px)/1.05 "Pinyon Script",cursive;margin:14px 0 6px}
+h1 span{color:var(--accent)}
+.date{font:500 13px/1.4 Jost,system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase}
+.intro{max-width:34ch;margin:18px auto 0;font-size:20px;color:var(--soft)}
+.picked{margin:18px auto 0;font:500 12px/1.4 Jost,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--pick);min-height:1.4em}
+main{max-width:1180px;margin:0 auto;padding:0 16px 64px}
+h2{font:500 12px/1 Jost,system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--soft);text-align:center;margin:40px 0 18px;display:flex;align-items:center;gap:14px}
+h2::before,h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}}
+@media (min-width:980px){.grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(43,35,32,.08);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(43,35,32,.14)}
+.card a{display:block;color:inherit;text-decoration:none}
+.card img{display:block;width:100%;aspect-ratio:390/844;object-fit:cover;background:var(--line)}
+.meta{padding:10px 12px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.name{font:500 20px/1.15 "Cormorant Garamond",Georgia,serif}
+.num{font:500 10px/1 Jost,system-ui,sans-serif;letter-spacing:.2em;color:var(--soft)}
+.heart{position:absolute;top:8px;right:8px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,253,249,.88);color:#B4485A;font-size:20px;line-height:40px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.heart[aria-pressed="true"]{background:#B4485A;color:#fff}
+.card.fav{outline:2px solid var(--pick);outline-offset:-2px}
+footer{text-align:center;padding:0 16px 48px;color:var(--soft);font-size:16px}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Choose our invitation</div>
+  <h1>Amer <span>&amp;</span> Andia</h1>
+  <div class="date">22 November 2026</div>
+  <p class="intro">Twenty designs, each a full invitation. Tap one to open it, then tap the heart on the ones you love.</p>
+  <div class="picked" id="picked" aria-live="polite"></div>
+</header>
+<main id="main"></main>
+<footer>Venues, times and photos inside are samples for now.</footer>
+<script>
+var GROUPS=[
+ ["Full wedding invitations",[
+  ["azura","Azure Coast"],["midnight-vows","Midnight Vows"],["palm-and-calm","Palm & Calm"],["rose-fountain","Rose Fountain"],
+  ["golden-hour","Golden Hour"],["heritage","Heritage"],["soft-love","Soft Love"],["bloom","Bloom"],["pure","Pure"],
+  ["wonderlust","Wonderlust"],["the-maison","The Maison"]]],
+ ["Save the date",[
+  ["amber-silk","Amber Silk"],["amor-airways","Amor Airways"],["beaded-rose","Beaded Rose"],["golden-heart","Golden Heart"],
+  ["light-the-date","Light the Date"],["secret-lace","Secret Lace"],["slot-machine","Slot Machine"]]],
+ ["Extras",[["bridesmaid-agreement","Bridesmaid Proposal"],["happy-birthday","Celebration"]]]
+];
+var KEY="aa-favs",favs=[];
+try{favs=JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(favs))}catch(e){}}
+var main=document.getElementById("main"),n=0;
+GROUPS.forEach(function(g){
+  var h=document.createElement("h2");h.textContent=g[0];main.appendChild(h);
+  var grid=document.createElement("div");grid.className="grid";main.appendChild(grid);
+  g[1].forEach(function(t){
+    n++;var c=document.createElement("div");c.className="card";c.dataset.id=t[0];
+    c.innerHTML='<a href="'+t[0]+'/"><img loading="lazy" src="_thumbs/'+t[0]+'.webp" alt="'+t[1]+' invitation"><div class="meta"><span class="name">'+t[1]+'</span><span class="num">'+String(n).padStart(2,"0")+'</span></div></a>'+
+      '<button class="heart" type="button" aria-pressed="false" aria-label="Love '+t[1]+'">&#9825;</button>';
+    grid.appendChild(c);
+  });
+});
+function paint(){
+  [].forEach.call(document.querySelectorAll(".card"),function(c){
+    var on=favs.indexOf(c.dataset.id)>-1,b=c.querySelector(".heart");
+    c.classList.toggle("fav",on);b.setAttribute("aria-pressed",on);b.innerHTML=on?"&#9829;":"&#9825;";
+  });
+  var names=favs.map(function(id){var c=document.querySelector('.card[data-id="'+id+'"] .name');return c?c.textContent:id});
+  document.getElementById("picked").textContent=names.length?"Loved: "+names.join(" · "):"";
+}
+main.addEventListener("click",function(e){
+  var b=e.target.closest(".heart");if(!b)return;
+  var id=b.parentNode.dataset.id,i=favs.indexOf(id);
+  if(i>-1)favs.splice(i,1);else favs.push(id);save();paint();
+});
+paint();
+</script>
+</body>
+</html>

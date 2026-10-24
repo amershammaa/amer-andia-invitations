@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amer &amp; Andia · Light the Date</title>
+<meta name="description" content="Save the date: Amer &amp; Andia are getting married on 22 November 2026. Strike the match and light the date. Formal invitation to follow.">
+<meta name="theme-color" content="#F4E9D6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#F7EEDC; --ink:#4B3426; --soft:#8A6B52; --rose:#C27F7C; --gold:#B58A43; --sage:#6E8A74; --cream:#FBF4E6;
+  --line:rgba(181,138,67,.4);
+  --disp:"Playfair Display","Iowan Old Style",Georgia,serif;
+  --serif:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
+  --label:"Josefin Sans","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --gut:max(22px,env(safe-area-inset-left,0px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+html.locked,html.locked body{overflow:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 20px/1.55 var(--serif);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.label{font:600 11px/1.4 var(--label);letter-spacing:.3em;text-transform:uppercase;color:var(--soft)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sample{display:inline-block;font:600 9px/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);border:1px dashed rgba(138,107,82,.6);border-radius:99px;padding:4px 8px;vertical-align:middle;margin-left:6px;white-space:nowrap}
+
+/* scroll reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.show{opacity:1;transform:none}
+
+/* ================= STAGE (the interactive scene) ================= */
+.stage-sec{position:relative;height:100vh;height:100svh;overflow:hidden;background:linear-gradient(180deg,#F8EEDC,#F3E3CC)}
+.scene{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:max(100vw,calc(100svh*.5581));height:max(100svh,calc(100vw*1.7917));container-type:size}
+.scene>.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+@media (min-aspect-ratio:558/1000){
+  .scene{width:calc(100svh*.5581);height:100svh;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+}
+.glow{position:absolute;z-index:2;border-radius:50% 50% 0 0/36% 36% 0 0;background:radial-gradient(ellipse 66% 52% at 50% 62%,rgba(255,190,60,.9),rgba(255,210,110,.5) 52%,rgba(255,232,170,0) 100%),linear-gradient(180deg,rgba(255,226,150,.42),rgba(255,226,150,.12));-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 62%,transparent 100%);mix-blend-mode:multiply;opacity:0;transition:opacity 1.6s ease;pointer-events:none}
+.glow.on{opacity:1}
+.arch{position:absolute;z-index:3;top:25.4%;width:24%;height:23%;display:flex;flex-direction:column;align-items:center;text-align:center;pointer-events:none}
+.arch .lbl{margin-top:6.6cqw;font:600 max(8px,1.9cqw)/1 var(--label);letter-spacing:.26em;text-transform:uppercase;color:#8A6A4B;padding-left:.26em}
+.arch .rule{width:46%;height:1px;margin-top:2.4cqw;background:linear-gradient(90deg,transparent,rgba(138,106,75,.55),transparent)}
+.arch .val{margin-top:2cqw;font:600 8.8cqw/1 var(--serif);color:#6B4A2D;opacity:0;transform:translateY(1.6cqw);filter:blur(5px);transition:opacity 1.4s ease .25s,transform 1.4s ease .25s,filter 1.4s ease .25s;text-shadow:0 0 14px rgba(255,236,170,.9);white-space:nowrap}
+.arch .val.mo{font-size:4.9cqw;margin-top:3.6cqw;letter-spacing:.01em}
+.arch.on .val{opacity:1;transform:none;filter:none}
+.a1{left:9.4%}.a2{left:38.3%}.a3{left:67.2%}
+.g1{left:10.1%;top:22.6%;width:23%;height:30%}.g2{left:38.3%;top:22.6%;width:24.5%;height:30%}.g3{left:67.3%;top:22.6%;width:23.8%;height:30%}
+
+.flame{position:absolute;z-index:4;width:4cqw;pointer-events:none;transform:translate(-50%,-94%) scale(0);transform-origin:50% 100%;transition:transform .8s cubic-bezier(.3,1.5,.5,1)}
+.flame.on{transform:translate(-50%,-94%) scale(1)}
+.flame img{width:100%;transform-origin:50% 100%;animation:flick 1.6s ease-in-out infinite;filter:drop-shadow(0 0 1.6cqw rgba(255,190,70,.85))}
+.f1{left:20.85%;top:41.7%}.f2{left:50.1%;top:40.3%;}.f3{left:79.7%;top:41.9%}
+.f2 img{animation-delay:-.5s}.f3 img{animation-delay:-1s}
+@keyframes flick{0%,100%{transform:scale(1,1) rotate(0)}25%{transform:scale(.95,1.05) rotate(-1.6deg)}55%{transform:scale(1.04,.97) rotate(1.4deg)}80%{transform:scale(.98,1.03) rotate(-.6deg)}}
+
+.match{position:absolute;z-index:6;left:84%;top:64%;width:0;height:0;
+  transition:left 1.05s cubic-bezier(.55,0,.25,1),top 1.05s cubic-bezier(.55,0,.25,1)}
+.match .stick{max-width:none;position:absolute;width:3.3cqw;left:-1.65cqw;top:-.5cqw;transform-origin:50% .8cqw;transform:rotate(30deg);filter:drop-shadow(.8cqw 1cqw 1cqw rgba(60,35,20,.3))}
+.match .mf{max-width:none;position:absolute;width:2.7cqw;left:-1.35cqw;top:-7.4cqw;transform-origin:50% 100%;transform:scale(0);transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.match .mf img{animation:flick .9s ease-in-out infinite;filter:drop-shadow(0 0 1.2cqw rgba(255,190,70,.9))}
+.match.struck .mf{transform:scale(1)}
+
+.s-top{position:absolute;z-index:5;left:0;right:0;top:5.2%;text-align:center;padding:0 6cqw}
+.s-top .pre,.s-top .post{transition:opacity 1.2s ease,transform 1.2s ease}
+.s-top .post{position:absolute;left:0;right:0;top:0;opacity:0;transform:translateY(10px)}
+.s-top .eyebrow{font:600 max(10px,2.1cqw)/1.3 var(--label);letter-spacing:.34em;text-transform:uppercase;color:#7C5B41;padding-left:.34em}
+.s-top h1{font:italic 400 8.6cqw/1.1 var(--disp);color:#57392A;margin-top:2.2cqw;text-shadow:0 0 3cqw rgba(250,240,220,.9),0 0 1cqw rgba(250,240,220,.8)}
+.s-top .names{font:italic 400 10.4cqw/1.08 var(--disp);color:#57392A;margin-top:2cqw;white-space:nowrap;text-shadow:0 0 3cqw rgba(250,240,220,.95),0 0 1cqw rgba(250,240,220,.9)}
+.s-top .names i{font-style:normal;color:var(--rose);font-size:.8em}
+.lit-all .s-top .pre{opacity:0;transform:translateY(-10px)}
+.lit-all .s-top .post{opacity:1;transform:none}
+
+.s-bot{position:absolute;z-index:7;left:0;right:0;bottom:max(4.4%,26px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:3.4cqw}
+.s-bot .ask,.s-bot .done{transition:opacity .9s ease,transform .9s ease}
+.s-bot .done{position:absolute;left:0;right:0;bottom:0;opacity:0;pointer-events:none;transform:translateY(12px);display:flex;flex-direction:column;align-items:center;gap:1.4cqw;padding:5cqw 4cqw 0}
+.s-bot .done::before{content:"";position:absolute;inset:-4cqw -10cqw -8cqw;z-index:-1;background:radial-gradient(ellipse at 50% 55%,rgba(251,244,228,.92),rgba(251,244,228,.7) 45%,rgba(251,244,228,0) 72%)}
+.ask{display:flex;flex-direction:column;align-items:center;gap:3cqw}
+.strike{cursor:pointer;border:1px solid rgba(87,57,42,.5);background:rgba(251,244,230,.72);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);color:#57392A;font:600 12px/1 var(--label);letter-spacing:.3em;text-transform:uppercase;padding:16px 26px 16px 29px;border-radius:99px;animation:pulse 2.4s ease-in-out infinite;box-shadow:0 10px 24px rgba(87,57,42,.18)}
+.hint{font:italic 400 max(16px,3.9cqw)/1.2 var(--serif);color:#57392A;text-shadow:0 0 2cqw rgba(250,240,220,.95)}
+@keyframes pulse{50%{opacity:.6}}
+.lit-all .s-bot .ask{opacity:0;pointer-events:none;transform:translateY(8px)}
+.lit-all .s-bot .done{opacity:1;pointer-events:auto;transform:none;transition-delay:.4s}
+.begun .ask .hint,.begun .strike{opacity:0;pointer-events:none;transition:opacity .5s}
+.done .date{font:italic 500 max(26px,7.4cqw)/1.1 var(--disp);color:#57392A}
+.done .follow{font:600 max(10px,2cqw)/1.4 var(--label);letter-spacing:.3em;text-transform:uppercase;color:#7C5B41;padding-left:.3em}
+.done .cue{margin-top:2cqw;display:inline-flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;font:600 10px/1 var(--label);letter-spacing:.3em;text-transform:uppercase;color:#57392A}
+.done .cue::after{content:"";width:9px;height:9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(5px) rotate(45deg)}}
+
+/* falling petals */
+.shower{position:absolute;inset:0;z-index:8;pointer-events:none;overflow:hidden}
+.shower img{position:absolute;top:-16%;opacity:.95;will-change:transform;animation:fall var(--t,9s) cubic-bezier(.3,.1,.6,.9) var(--dl,0s) forwards}
+@keyframes fall{0%{transform:translate3d(0,0,0) rotate(0)}100%{transform:translate3d(var(--dx,20px),128svh,0) rotate(var(--r,200deg))}}
+
+/* ================= CONTENT ================= */
+.sec{position:relative;padding:92px var(--gut) 84px;text-align:center;overflow:hidden}
+.sec>.in{position:relative;z-index:2;max-width:640px;margin:0 auto}
+.sec h2{font:italic 400 clamp(38px,10.5vw,58px)/1.1 var(--disp);color:var(--ink);margin:12px 0 6px}
+.orn{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px auto 26px;max-width:260px;color:var(--gold)}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line))}
+.orn::after{transform:scaleX(-1)}
+.orn img{width:15px;height:auto;filter:drop-shadow(0 0 4px rgba(255,190,70,.7))}
+.lead{max-width:30ch;margin:0 auto;font-size:clamp(21px,5.4vw,24px);line-height:1.55}
+.lead em{color:var(--rose);font-style:italic}
+.pt{position:absolute;z-index:1;pointer-events:none;animation:drift 9s ease-in-out infinite alternate;will-change:transform}
+@keyframes drift{from{transform:translateY(0) rotate(var(--r0,0deg))}to{transform:translateY(12px) rotate(calc(var(--r0,0deg) + 6deg))}}
+
+.count-sec{background:linear-gradient(180deg,#F3E3CC,var(--bg) 40%)}
+.count-sec .p1{width:104px;left:-38px;top:8px;--r0:-18deg}
+.count-sec .p2{width:84px;right:-30px;bottom:14px;--r0:22deg;animation-delay:-3s}
+.count-sec .p3{width:64px;right:-8px;top:10px;--r0:140deg;animation-delay:-5s;opacity:.9}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:420px;margin:28px auto 0}
+.count div{display:flex;flex-direction:column;align-items:center;gap:8px;padding:30px 2px 16px;border-radius:999px 999px 12px 12px;border:1px solid var(--line);background:linear-gradient(180deg,#FFF0C8 0%,#FBF1DE 62%,#FBF4E6);box-shadow:0 12px 26px rgba(120,80,40,.12),inset 0 -16px 22px -14px rgba(255,190,80,.55)}
+.count b{font:600 clamp(30px,9vw,44px)/1 var(--serif);font-variant-numeric:tabular-nums;color:#6B4A2D}
+.count span{font:600 9px/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+.count-note{margin-top:24px;font-style:italic;color:var(--soft);font-size:20px}
+
+.follow-sec{background:linear-gradient(180deg,var(--bg),#F2E4D2)}
+.follow-sec .p4{width:110px;left:-36px;bottom:16px;--r0:10deg}
+.follow-sec .p5{width:74px;right:-18px;top:-12px;--r0:-24deg;animation-delay:-4s}
+.follow-sec .p6{width:70px;right:10px;bottom:20px;--r0:30deg;animation-delay:-2s;opacity:.92}
+.card{margin:30px auto 0;max-width:430px;padding:56px 24px 28px;background:rgba(255,250,240,.82);border:1px solid var(--line);border-radius:140px 140px 8px 8px;box-shadow:0 18px 40px rgba(120,80,40,.12);position:relative}
+.card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(181,138,67,.22);border-radius:134px 134px 4px 4px;pointer-events:none}
+.card p{font-size:21px;line-height:1.45}
+.card small{display:block;margin-top:8px;font:italic 400 17px/1.4 var(--serif);color:var(--soft)}
+.btns{display:flex;flex-direction:column;gap:12px;align-items:center;margin-top:26px}
+.btn{display:inline-block;text-decoration:none;font:600 11.5px/1 var(--label);letter-spacing:.26em;text-transform:uppercase;padding:17px 26px;background:var(--rose);color:#fff;border-radius:99px;transition:background .25s,transform .25s;box-shadow:0 10px 22px rgba(194,127,124,.35)}
+.btn:hover{background:#A9625F}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid rgba(75,52,38,.4);box-shadow:none}
+.btn.ghost:hover{background:rgba(75,52,38,.07)}
+
+footer{position:relative;text-align:center;padding:56px var(--gut) calc(46px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,#F2E4D2,#EAD3BC);overflow:hidden}
+footer .fl{width:36px;margin:0 auto 8px;filter:drop-shadow(0 0 10px rgba(255,190,70,.8));animation:flick 1.6s ease-in-out infinite;transform-origin:50% 100%}
+footer .names{font:italic 400 clamp(36px,10vw,50px)/1.1 var(--disp)}
+footer .names span{color:var(--rose);font-style:normal;font-size:.8em}
+footer .date{margin-top:8px;font:600 12px/1.4 var(--label);letter-spacing:.3em;text-transform:uppercase;color:var(--soft)}
+footer small{display:block;margin-top:20px;font:italic 400 16px/1.5 var(--serif);color:var(--soft)}
+
+@media (min-width:700px){
+  .sec{padding-top:116px;padding-bottom:104px}
+  .count-sec .p1{width:230px;left:4vw}.count-sec .p2{width:190px;right:5vw}.count-sec .p3{width:130px;right:14vw}
+  .follow-sec .p4{width:210px;left:5vw}.follow-sec .p5{width:210px;right:6vw}.follow-sec .p6{width:120px;right:17vw}
+  .btns{flex-direction:row;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important}
+  .js .rv{transition-duration:.01s!important;transition-delay:0s!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ STAGE: LIGHT THE DATE ============ -->
+<header class="stage-sec" id="top">
+  <div class="scene" id="scene">
+    <img class="bg" src="assets/scene.webp" alt="" width="768" height="1376" fetchpriority="high">
+
+    <div class="glow g1" id="g1" aria-hidden="true"></div>
+    <div class="glow g2" id="g2" aria-hidden="true"></div>
+    <div class="glow g3" id="g3" aria-hidden="true"></div>
+
+    <div class="arch a1" id="ar1"><div class="lbl">Day</div><div class="rule"></div><div class="val">22</div></div>
+    <div class="arch a2" id="ar2"><div class="lbl">Month</div><div class="rule"></div><div class="val mo">November</div></div>
+    <div class="arch a3" id="ar3"><div class="lbl">Year</div><div class="rule"></div><div class="val">2026</div></div>
+
+    <div class="flame f1" id="fl1" aria-hidden="true"><img src="assets/candle-flame.webp" alt="" width="135" height="400"></div>
+    <div class="flame f2" id="fl2" aria-hidden="true"><img src="assets/candle-flame.webp" alt="" width="135" height="400"></div>
+    <div class="flame f3" id="fl3" aria-hidden="true"><img src="assets/candle-flame.webp" alt="" width="135" height="400"></div>
+
+    <div class="match" id="match" aria-hidden="true">
+      <img class="stick" src="assets/match.webp" alt="" width="102" height="700">
+      <div class="mf"><img src="assets/candle-flame.webp" alt="" width="135" height="400"></div>
+    </div>
+
+    <div class="s-top">
+      <div class="pre">
+        <div class="eyebrow">Amer &amp; Andia</div>
+        <h1>You are invited</h1>
+      </div>
+      <div class="post" aria-live="polite">
+        <div class="eyebrow">Save the date</div>
+        <div class="names">Amer <i>&amp;</i> Andia</div>
+      </div>
+    </div>
+
+    <div class="s-bot">
+      <div class="ask">
+        <p class="hint">Strike the match to light the date</p>
+        <button class="strike" id="strike" type="button">Strike the match</button>
+      </div>
+      <div class="done">
+        <div class="date">22 November 2026</div>
+        <div class="follow">Formal invitation to follow</div>
+        <a class="cue" href="#countdown">Scroll</a>
+      </div>
+    </div>
+
+    <div class="shower" id="shower" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main>
+<!-- ============ COUNTDOWN ============ -->
+<section class="sec count-sec" id="countdown" aria-labelledby="cd-h">
+  <img class="pt p1" src="assets/petal-1.webp" alt="" width="516" height="560" loading="lazy" decoding="async">
+  <img class="pt p2" src="assets/petal-3.webp" alt="" width="464" height="560" loading="lazy" decoding="async">
+  <img class="pt p3" src="assets/petal-6.webp" alt="" width="385" height="560" loading="lazy" decoding="async">
+  <div class="in">
+    <div class="label rv">Until we say &ldquo;I do&rdquo;</div>
+    <h2 id="cd-h" class="rv" style="--d:.1s">Counting down</h2>
+    <div class="orn rv"><img src="assets/candle-flame.webp" alt="" width="135" height="400" loading="lazy" decoding="async"></div>
+    <div class="count rv" id="count" style="--d:.2s" role="timer" aria-live="off" aria-label="Time until the wedding">
+      <div><b data-u="d">000</b><span>Days</span></div>
+      <div><b data-u="h">00</b><span>Hours</span></div>
+      <div><b data-u="m">00</b><span>Mins</span></div>
+      <div><b data-u="s">00</b><span>Secs</span></div>
+    </div>
+    <p class="count-note rv" id="countNote" style="--d:.3s">Sunday, 22 November 2026</p>
+  </div>
+</section>
+
+<!-- ============ FORMAL INVITATION TO FOLLOW ============ -->
+<section class="sec follow-sec" id="follow" aria-labelledby="fo-h">
+  <img class="pt p4" src="assets/petal-2.webp" alt="" width="555" height="560" loading="lazy" decoding="async">
+  <img class="pt p5" src="assets/petal-4.webp" alt="" width="321" height="560" loading="lazy" decoding="async">
+  <img class="pt p6" src="assets/petal-5.webp" alt="" width="452" height="560" loading="lazy" decoding="async">
+  <div class="in">
+    <div class="label rv">Keep this one free</div>
+    <h2 id="fo-h" class="rv">Our formal invitation will follow</h2>
+    <div class="orn rv"><img src="assets/candle-flame.webp" alt="" width="135" height="400" loading="lazy" decoding="async"></div>
+    <p class="lead rv"><em>Amer &amp; Andia</em> are getting married, and we would love you beside us. The venue, the times and all the little details will follow in our formal invitation.</p>
+
+    <div class="card rv">
+      <p>Sunday, 22 November 2026<small>Venue and times to follow <span class="sample">sample</span></small></p>
+    </div>
+
+    <div class="btns rv">
+      <a class="btn" id="icsLink" href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-//Amer%20and%20Andia//Save%20the%20date//EN%0D%0ABEGIN%3AVEVENT%0D%0AUID%3Aamer-andia-20261122%40save-the-date%0D%0ADTSTAMP%3A20261024T000000Z%0D%0ADTSTART%3BVALUE%3DDATE%3A20261122%0D%0ADTEND%3BVALUE%3DDATE%3A20261123%0D%0ASUMMARY%3AAmer%20%26%20Andia%27s%20Wedding%0D%0ADESCRIPTION%3ASave%20the%20date%21%20Our%20formal%20invitation%20will%20follow.%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A" download="amer-and-andia-save-the-date.ics">Add to calendar</a>
+      <a class="btn ghost" id="gcalLink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Amer+%26+Andia%27s+Wedding&amp;dates=20261122%2F20261123&amp;details=Save+the+date%21+Our+formal+invitation+will+follow." target="_blank" rel="noopener">Google Calendar</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img class="fl" src="assets/candle-flame.webp" alt="" width="135" height="400" loading="lazy" decoding="async">
+  <div class="names">Amer <span>&amp;</span> Andia</div>
+  <div class="date">22 November 2026</div>
+  <small>With love, Amer &amp; Andia. Venue and times are samples until confirmed.</small>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement;
+  doc.classList.add('js');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var WEDDING=new Date('2026-11-22T00:00:00'); // date only; time to be confirmed
+
+  var stage=document.getElementById('top'), scene=document.getElementById('scene');
+  var match=document.getElementById('match'), strike=document.getElementById('strike');
+  var shower=document.getElementById('shower');
+  var begun=false;
+  doc.classList.add('locked');
+
+  /* where the match head goes for each candle (offsets keep the match flame touching the wick) */
+  var WICK=[[20.85,41.9],[50.1,40.5],[79.7,42.1]];
+  function sleep(ms){return new Promise(function(r){setTimeout(r,ms)})}
+  function moveMatch(i){
+    match.style.left='calc('+WICK[i][0]+'% - 2.6cqw)';
+    match.style.top='calc('+WICK[i][1]+'% + 5.6cqw)';
+  }
+  function ignite(i){
+    var n=i+1;
+    document.getElementById('fl'+n).classList.add('on');
+    document.getElementById('g'+n).classList.add('on');
+    document.getElementById('ar'+n).classList.add('on');
+  }
+  function petals(){
+    if(reduce)return;
+    var srcs=['petal-1','petal-2','petal-5','petal-6','petal-3','petal-4','petal-1','petal-6','petal-5','petal-2','petal-4','petal-3'];
+    var frag=document.createDocumentFragment();
+    srcs.forEach(function(s,i){
+      var im=new Image(); im.alt=''; im.src='assets/'+s+'.webp';
+      var w=5+Math.random()*5;
+      im.style.cssText='left:'+(Math.random()*92)+'%;width:'+w+'cqw;--t:'+(7+Math.random()*5)+'s;--dl:'+(i*.35)+'s;--dx:'+((Math.random()-.5)*160)+'px;--r:'+((Math.random()-.5)*540)+'deg';
+      frag.appendChild(im);
+    });
+    shower.appendChild(frag);
+    setTimeout(function(){shower.innerHTML=''},16000);
+  }
+  function finish(){
+    stage.classList.add('lit-all');
+    doc.classList.remove('locked');
+    petals();
+  }
+  async function light(){
+    if(begun)return; begun=true;
+    stage.classList.add('begun');
+    if(reduce){[0,1,2].forEach(ignite);finish();return}
+    await sleep(250);
+    match.classList.add('struck');
+    await sleep(750);
+    for(var i=0;i<3;i++){
+      moveMatch(i); await sleep(1150);
+      ignite(i);    await sleep(950);
+    }
+    match.classList.remove('struck');
+    await sleep(500);
+    match.style.left='84%'; match.style.top='64%';
+    await sleep(300);
+    finish();
+  }
+  strike.addEventListener('click',function(e){e.stopPropagation();light()});
+  scene.addEventListener('click',function(e){
+    if(e.target.closest('a'))return;
+    light();
+  });
+
+  /* ---------- countdown ---------- */
+  var cd={};['d','h','m','s'].forEach(function(u){cd[u]=document.querySelector('[data-u="'+u+'"]')});
+  var note=document.getElementById('countNote');
+  function pad(n,l){return String(n).padStart(l||2,'0')}
+  function tick(){
+    var ms=WEDDING-Date.now();
+    if(ms<=0){['d','h','m','s'].forEach(function(u){cd[u].textContent='00'});note.textContent='Today we celebrate!';return}
+    cd.d.textContent=pad(Math.floor(ms/864e5),2);
+    cd.h.textContent=pad(Math.floor(ms/36e5)%24);
+    cd.m.textContent=pad(Math.floor(ms/6e4)%60);
+    cd.s.textContent=pad(Math.floor(ms/1e3)%60);
+  }
+  tick();setInterval(tick,1000);
+
+  /* ---------- scroll reveals ---------- */
+  var items=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){io.observe(el)});
+  }else items.forEach(function(el){el.classList.add('show')});
+})();
+</script>
+</body>
+</html>

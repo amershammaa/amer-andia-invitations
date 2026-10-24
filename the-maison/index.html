@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amer &amp; Andia · The Maison</title>
+<meta name="description" content="Amer &amp; Andia are getting married on 22 November 2026. An evening of pearls, linen and lace.">
+<meta name="theme-color" content="#E9E4DC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=Jost:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EBE6DE; --linen:#E1DBD1; --ink:#37383D; --soft:#6C6E75; --silver:#9A9FA6; --pearl:#FBF9F5; --champ:#A88F66; --line:rgba(55,56,61,.26);
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --serif:"Libre Caslon Text","Iowan Old Style",Georgia,serif;
+  --label:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --gut:max(22px,env(safe-area-inset-left,0px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+html.locked,html.locked body{overflow:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.75 var(--serif);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--champ);outline-offset:3px}
+
+.label{font:500 10.5px/1.5 var(--label);letter-spacing:.38em;text-transform:uppercase;color:var(--soft)}
+.sec{position:relative;padding:76px var(--gut) 72px;text-align:center}
+.sec>.in{position:relative;z-index:2;max-width:760px;margin:0 auto}
+.sec h2{font:italic 400 clamp(38px,10vw,56px)/1.1 var(--display);color:var(--ink);margin:12px 0 10px;letter-spacing:-.01em}
+.lead{max-width:36ch;margin:0 auto;font-size:clamp(16.5px,4.4vw,18.5px);line-height:1.8}
+.lead em{font-style:italic;color:var(--champ)}
+.sample{display:inline-block;font:500 8.5px/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);border:1px dashed color-mix(in srgb,var(--soft) 60%,transparent);border-radius:99px;padding:4px 8px;vertical-align:middle;margin-left:6px;white-space:nowrap}
+.rule{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px auto 22px;max-width:260px;color:var(--champ)}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--silver))}
+.rule::after{transform:scaleX(-1)}
+.rule i{width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#d9d2c6 60%,#b9b0a0);box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.band{display:block;width:100%;height:auto}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.show{opacity:1;transform:none}
+
+/* ---------- intro: doors tied with a bow ---------- */
+.intro{position:fixed;inset:0;z-index:100;background:#DCD8D0;display:flex;align-items:center;justify-content:center;cursor:pointer;border:0;padding:0;width:100%;text-align:center;overflow:hidden;transition:opacity 1.1s ease,visibility 0s linear 1.1s}
+.intro.gone{opacity:0;visibility:hidden;pointer-events:none}
+.intro .stage{position:absolute;left:50%;top:50%;width:max(100vw,calc(100vh*720/1294));height:max(100vh,calc(100vw*1294/720));transform:translate(-50%,-50%)}
+@supports (height:100svh){.intro .stage{width:max(100vw,calc(100svh*720/1294));height:max(100svh,calc(100vw*1294/720))}}
+.intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.intro .fallback{display:none;position:absolute;inset:0;background:url(assets/doors-poster.webp) center/cover}
+.intro.novideo video{display:none}
+.intro.novideo .fallback{display:block}
+.intro .top,.intro .bottom{position:absolute;left:0;right:0;z-index:2;padding:0 24px;transition:opacity .7s ease}
+.intro .top{top:max(7%,36px)}
+.intro .plaque{display:inline-block;padding:16px 34px 14px;background:rgba(251,249,245,.9);border:1px solid rgba(55,56,61,.3);box-shadow:0 10px 30px rgba(55,56,61,.18);position:relative}
+.intro .plaque::before{content:"";position:absolute;inset:4px;border:1px solid rgba(55,56,61,.14);pointer-events:none}
+.intro .names{font:italic 400 clamp(26px,8vw,34px)/1.15 var(--display);color:var(--ink);margin-top:6px;white-space:nowrap}
+.intro .bottom{bottom:max(8%,40px);display:flex;flex-direction:column;align-items:center;gap:14px}
+.intro .tap{font:500 11.5px/1 var(--label);letter-spacing:.36em;text-transform:uppercase;color:var(--ink);animation:pulse 2.4s ease-in-out infinite;padding:15px 24px;border:1px solid rgba(55,56,61,.5);background:rgba(251,249,245,.82);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.intro.opening .top,.intro.opening .bottom{opacity:0}
+@keyframes pulse{50%{opacity:.55}}
+
+/* ---------- hero: the embroidered stage ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;background:#DCD6CE;display:flex;justify-content:center;align-items:center}
+.hero-media{position:absolute;inset:0;display:flex;justify-content:center}
+.hero-media img{height:100%;width:100%;max-width:calc(100vh*720/1294);object-fit:cover}
+@supports (height:100svh){.hero-media img{max-width:calc(100svh*720/1294)}}
+@media (min-aspect-ratio:3/4){.hero-media img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}}
+.hero-copy{position:relative;z-index:2;text-align:center;width:min(100%,300px);padding:0 4px}
+.hero-copy::before{content:"";position:absolute;inset:-46px -34px;z-index:-1;background:radial-gradient(ellipse at center,rgba(228,222,214,.94) 50%,rgba(228,222,214,0) 72%)}
+@media (min-width:420px){.hero-copy{width:min(100%,330px)}}
+.hero .eyebrow{font:500 10px/1.4 var(--label);letter-spacing:.34em;text-transform:uppercase;color:var(--soft)}
+.hero h1{font:italic 400 clamp(46px,14.5vw,72px)/1.02 var(--display);color:var(--ink);margin:16px 0 8px;letter-spacing:-.02em}
+.hero h1 .amp{display:block;font-size:.5em;color:var(--champ);line-height:1.1;margin:2px 0}
+.hero .date{font:500 12px/1.3 var(--label);letter-spacing:.3em;text-transform:uppercase;color:var(--ink);margin-top:18px}
+.hero .place{font:italic 400 16px/1.35 var(--serif);color:var(--soft);margin-top:8px}
+.hero .cue{position:absolute;z-index:2;bottom:max(24px,env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center}
+.hero .cue a{text-decoration:none;font:500 10.5px/1 var(--label);letter-spacing:.3em;text-transform:uppercase;color:var(--ink);display:inline-flex;flex-direction:column;align-items:center;gap:10px;background:rgba(235,230,222,.7);padding:8px 14px;border-radius:99px}
+.hero .cue a::after{content:"";width:9px;height:9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(5px) rotate(45deg)}}
+.hero .rise{opacity:0;transform:translateY(14px);transition:opacity 1.4s ease,transform 1.4s ease;transition-delay:var(--d,0s)}
+body.opened .hero .rise{opacity:1;transform:none}
+
+/* ---------- countdown ---------- */
+.count-sec{padding-top:56px}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;max-width:420px;margin:26px auto 0;padding:26px 10px 20px;background:var(--pearl);border:1px solid var(--line);position:relative;box-shadow:0 14px 34px rgba(55,56,61,.1)}
+.count::before{content:"";position:absolute;inset:5px;border:1px solid rgba(55,56,61,.12);pointer-events:none}
+.count div{display:flex;flex-direction:column;gap:8px;align-items:center}
+.count b{font:400 clamp(34px,10vw,48px)/1 var(--display);font-variant-numeric:tabular-nums;color:var(--ink)}
+.count span{font:500 9.5px/1 var(--label);letter-spacing:.24em;text-transform:uppercase;color:var(--soft)}
+.count-note{margin-top:22px;font-style:italic;color:var(--soft);font-size:17px}
+
+/* ---------- invitation ---------- */
+.invite{background:var(--linen)}
+.details{display:grid;gap:26px;margin:40px auto 0;max-width:420px;padding:36px 26px;background:var(--pearl);border:1px solid var(--line);position:relative;box-shadow:0 14px 34px rgba(55,56,61,.1)}
+.details::before{content:"";position:absolute;inset:6px;border:1px solid rgba(55,56,61,.14);pointer-events:none}
+.details h3{font:500 10px/1 var(--label);letter-spacing:.34em;text-transform:uppercase;color:var(--champ);margin-bottom:8px}
+.details p{font:italic 400 clamp(22px,6vw,26px)/1.25 var(--display)}
+.details small{display:block;font:400 14.5px/1.5 var(--serif);color:var(--soft);margin-top:4px}
+
+/* ---------- programme ---------- */
+.program{background:var(--bg)}
+.roman{max-width:540px;margin:34px auto 0;text-align:left}
+.rm{display:grid;grid-template-columns:56px 1fr;gap:14px;padding:22px 0;border-top:1px solid var(--line)}
+.rm:last-child{border-bottom:1px solid var(--line)}
+.rm .n{font:italic 400 34px/1 var(--display);color:var(--champ);text-align:center}
+.rm .time{font:500 10.5px/1 var(--label);letter-spacing:.3em;text-transform:uppercase;color:var(--soft);margin-bottom:6px}
+.rm h3{font:italic 400 clamp(24px,6.4vw,28px)/1.2 var(--display);color:var(--ink)}
+.rm p{font-size:15.5px;line-height:1.65;color:var(--soft);margin-top:5px;max-width:38ch}
+
+/* ---------- dress ---------- */
+.dress{background:var(--linen)}
+.swatches{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:28px 0 8px}
+.swatches i{display:block;width:46px;height:46px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 6px 14px rgba(55,56,61,.18)}
+.swatches figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:9px}
+.swatches figcaption{font:500 9px/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+.dress .fine{margin-top:20px;font-style:italic;color:var(--soft);font-size:15.5px}
+
+/* ---------- rsvp ---------- */
+.rsvp{background:var(--bg)}
+form{display:flex;flex-direction:column;gap:22px;max-width:420px;margin:30px auto 0;text-align:left;padding:32px 26px 26px;background:var(--pearl);border:1px solid var(--line);position:relative;box-shadow:0 14px 36px rgba(55,56,61,.12)}
+form::before{content:"";position:absolute;inset:6px;border:1px solid rgba(55,56,61,.12);pointer-events:none}
+.f{display:flex;flex-direction:column;gap:8px}
+.f>label,.f>legend{font:500 10px/1.2 var(--label);letter-spacing:.28em;text-transform:uppercase;color:var(--soft);padding:0}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+input[type=text],input[type=email],input[type=number],textarea{font:400 18px/1.35 var(--serif);padding:8px 2px 10px;border:0;border-bottom:1px solid rgba(55,56,61,.35);background:transparent;border-radius:0;width:100%;color:var(--ink)}
+textarea{resize:vertical;min-height:70px}
+input:focus,textarea:focus{outline:0;border-bottom-color:var(--champ);box-shadow:0 1px 0 var(--champ)}
+.choice{display:flex;gap:8px}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice label{flex:1;text-align:center;cursor:pointer;padding:13px 6px;border:1px solid rgba(55,56,61,.3);font:500 10.5px/1.2 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink);transition:background .25s,color .25s}
+.choice input:checked+label{background:var(--ink);color:#fff;border-color:var(--ink)}
+.choice input:focus-visible+label{outline:2px solid var(--champ);outline-offset:2px}
+.stepper{display:flex;align-items:center;gap:6px}
+.stepper button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(55,56,61,.3);background:transparent;font:400 22px/1 var(--serif);cursor:pointer;color:var(--ink)}
+.stepper input{width:64px;text-align:center;-moz-appearance:textfield;appearance:textfield}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.btn{font:500 11.5px/1 var(--label);letter-spacing:.34em;text-transform:uppercase;padding:18px;border:0;background:var(--ink);color:#fff;cursor:pointer;transition:background .25s,transform .25s}
+.btn:hover{background:var(--champ)}
+.btn:active{transform:scale(.98)}
+.fine-note{font:italic 400 14px/1.4 var(--serif);color:var(--soft);text-align:center;margin-top:-6px}
+.thanks{max-width:420px;margin:30px auto 0}
+.thanks[hidden],form[hidden]{display:none}
+.thanks .vid{overflow:hidden;box-shadow:0 0 0 6px var(--pearl),0 0 0 7px var(--silver),0 20px 44px rgba(55,56,61,.25);aspect-ratio:720/1294;max-width:230px;margin:0 auto 28px;background:#DCD6CE;border-radius:140px 140px 4px 4px}
+.thanks .vid video{width:100%;height:100%;object-fit:cover}
+.thanks h3{font:italic 400 clamp(34px,9vw,44px)/1.15 var(--display);color:var(--ink)}
+.thanks p{margin-top:8px;font-size:17.5px}
+.thanks .again{margin-top:18px;background:none;border:0;font:500 10.5px/1 var(--label);letter-spacing:.24em;text-transform:uppercase;color:var(--champ);text-decoration:underline;text-underline-offset:5px;cursor:pointer;padding:10px}
+
+/* ---------- footer ---------- */
+footer{position:relative;text-align:center;background:var(--linen);overflow:hidden;padding-bottom:calc(46px + env(safe-area-inset-bottom,0px))}
+footer .band{margin:0 0 30px}
+footer .names{font:italic 400 clamp(40px,11vw,60px)/1.1 var(--display);padding:0 var(--gut)}
+footer .names span{color:var(--champ)}
+footer .date{margin-top:8px;font:500 11.5px/1.4 var(--label);letter-spacing:.34em;text-transform:uppercase;color:var(--soft)}
+footer small{display:block;margin:18px auto 0;padding:0 var(--gut);font:italic 400 14.5px/1.5 var(--serif);color:var(--soft)}
+
+@media (min-width:700px){.sec{padding-top:104px;padding-bottom:96px}.count-sec{padding-top:70px}.band{max-height:240px;object-fit:cover}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important}
+  .js .rv,.hero .rise{transition-duration:.01s!important;transition-delay:0s!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ INTRO: DOORS TIED WITH A BOW ============ -->
+<div class="intro" id="intro" role="button" tabindex="0" aria-label="Open the invitation">
+  <div class="stage">
+    <video id="introVideo" muted playsinline preload="auto" poster="assets/doors-poster.webp" aria-hidden="true">
+      <source src="assets/doors-video.mp4" type="video/mp4">
+    </video>
+    <div class="fallback" aria-hidden="true"></div>
+  </div>
+  <div class="top">
+    <div class="plaque">
+      <div class="label">You are invited</div>
+      <div class="names">Amer &amp; Andia</div>
+    </div>
+  </div>
+  <div class="bottom">
+    <span class="tap">Tap to untie the bow</span>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-media"><img src="assets/stage.webp" alt="" width="720" height="1294" decoding="async"></div>
+  <div class="hero-copy">
+    <div class="eyebrow rise" style="--d:.5s">Together with their families</div>
+    <h1 class="rise" style="--d:.8s">Amer <span class="amp">&amp;</span> Andia</h1>
+    <div class="date rise" style="--d:1.2s">22 November 2026</div>
+    <div class="place rise" style="--d:1.4s">Maison Lumi&egrave;re <span class="sample">sample venue</span></div>
+  </div>
+  <div class="cue rise" style="--d:2.2s"><a href="#countdown">Scroll</a></div>
+</header>
+
+<main>
+<!-- ============ COUNTDOWN ============ -->
+<section class="sec count-sec" id="countdown" aria-labelledby="cd-h">
+  <div class="in">
+    <div class="label rv">Until we say &ldquo;I do&rdquo;</div>
+    <h2 id="cd-h" class="rv" style="--d:.1s">Counting down</h2>
+    <div class="rule rv" aria-hidden="true"><i></i></div>
+    <div class="count rv" id="count" style="--d:.2s" role="timer" aria-live="off" aria-label="Time until the wedding">
+      <div><b data-u="d">00</b><span>Days</span></div>
+      <div><b data-u="h">00</b><span>Hours</span></div>
+      <div><b data-u="m">00</b><span>Mins</span></div>
+      <div><b data-u="s">00</b><span>Secs</span></div>
+    </div>
+    <p class="count-note rv" id="countNote" style="--d:.3s">Sunday, 22 November 2026</p>
+  </div>
+</section>
+
+<img class="band" src="assets/band-bow.webp" alt="An ivory linen bow decorated with seed pearls, tied across embroidered doors" width="720" height="380" loading="lazy" decoding="async">
+
+<!-- ============ INVITATION ============ -->
+<section class="sec invite" id="invitation" aria-labelledby="iv-h">
+  <div class="in">
+    <div class="label rv">The invitation</div>
+    <h2 id="iv-h" class="rv">An evening of pearls &amp; lace</h2>
+    <div class="rule rv" aria-hidden="true"><i></i></div>
+    <p class="lead rv">With the greatest joy, <em>Amer &amp; Andia</em> invite you to witness their marriage, and to celebrate with an elegant evening of dinner, music and dancing.</p>
+
+    <div class="details rv">
+      <div><h3>When</h3><p>Sunday, 22 November 2026</p><small>Ceremony at 6:00 PM <span class="sample">sample time</span></small></div>
+      <div><h3>Where</h3><p>Maison Lumi&egrave;re</p><small>8 Rue des Roses <span class="sample">sample</span></small></div>
+      <div><h3>Reply by</h3><p>8 November 2026</p><small>Kindly let us know if you can join us <span class="sample">sample date</span></small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMME ============ -->
+<section class="sec program" id="program" aria-labelledby="pg-h">
+  <div class="in">
+    <div class="label rv">The evening</div>
+    <h2 id="pg-h" class="rv">Programme</h2>
+    <div class="rule rv" aria-hidden="true"><i></i></div>
+    <p class="lead rv"><span class="sample" style="margin:0 0 6px">sample times</span><br>Timings are placeholders until the couple confirms.</p>
+    <div class="roman">
+      <article class="rm rv"><div class="n">I</div><div><div class="time">5:30 PM</div><h3>Arrival &amp; champagne</h3><p>Guests are welcomed beneath the draped arches with a glass of champagne.</p></div></article>
+      <article class="rm rv"><div class="n">II</div><div><div class="time">6:00 PM</div><h3>The ceremony</h3><p>Amer &amp; Andia exchange vows before their families and friends.</p></div></article>
+      <article class="rm rv"><div class="n">III</div><div><div class="time">7:00 PM</div><h3>Cocktail hour</h3><p>Canap&eacute;s and conversation in the candlelit salon.</p></div></article>
+      <article class="rm rv"><div class="n">IV</div><div><div class="time">8:00 PM</div><h3>Dinner</h3><p>A seated dinner with toasts from those closest to us.</p></div></article>
+      <article class="rm rv"><div class="n">V</div><div><div class="time">9:30 PM</div><h3>First dance &amp; dancing</h3><p>The floor opens for the first dance, then belongs to everyone.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DRESS ============ -->
+<section class="sec dress" id="dress" aria-labelledby="dr-h">
+  <div class="in">
+    <div class="label rv">What to wear</div>
+    <h2 id="dr-h" class="rv">Black tie, softly</h2>
+    <div class="rule rv" aria-hidden="true"><i></i></div>
+    <p class="lead rv">Evening elegance in a quiet palette: charcoal, silver, champagne and soft neutrals.</p>
+    <div class="swatches rv" aria-label="Suggested colours">
+      <figure><i style="background:#37383D"></i><figcaption>Charcoal</figcaption></figure>
+      <figure><i style="background:#9A9FA6"></i><figcaption>Silver</figcaption></figure>
+      <figure><i style="background:#D8C9AE"></i><figcaption>Champagne</figcaption></figure>
+      <figure><i style="background:#C9B3AC"></i><figcaption>Dusty rose</figcaption></figure>
+      <figure><i style="background:#8C94A0"></i><figcaption>Slate</figcaption></figure>
+    </div>
+    <p class="fine rv">We kindly ask guests to leave white and ivory to the bride. <span class="sample">sample</span></p>
+  </div>
+</section>
+
+<img class="band" src="assets/band-garland.webp" alt="" width="720" height="430" loading="lazy" decoding="async" style="transform:scaleY(-1);object-position:50% 100%">
+
+<!-- ============ RSVP ============ -->
+<section class="sec rsvp" id="rsvp" aria-labelledby="rs-h">
+  <div class="in">
+    <div class="label rv">Kindly reply by 8 November <span class="sample">sample</span></div>
+    <h2 id="rs-h" class="rv">Will you join us?</h2>
+    <div class="rule rv" aria-hidden="true"><i></i></div>
+
+    <form id="rsvpForm" class="rv" novalidate>
+      <div class="f">
+        <label for="g-name">Your name</label>
+        <input id="g-name" name="name" type="text" autocomplete="name" required placeholder="Full name">
+      </div>
+      <fieldset class="f">
+        <legend>Attending</legend>
+        <div class="choice">
+          <input type="radio" name="att" id="att-yes" value="yes" checked><label for="att-yes">Joyfully yes</label>
+          <input type="radio" name="att" id="att-no" value="no"><label for="att-no">Sadly no</label>
+        </div>
+      </fieldset>
+      <div class="f" id="guestsBox">
+        <label for="g-count">Number of guests</label>
+        <div class="stepper">
+          <button type="button" id="minus" aria-label="One fewer guest">&minus;</button>
+          <input id="g-count" name="guests" type="number" min="1" max="10" value="2" inputmode="numeric">
+          <button type="button" id="plus" aria-label="One more guest">+</button>
+        </div>
+      </div>
+      <div class="f">
+        <label for="g-note">A note for the couple <span style="letter-spacing:.1em;text-transform:none;font-style:italic">(optional)</span></label>
+        <textarea id="g-note" name="note" rows="2" placeholder="Dietary needs, song requests, a kind word…"></textarea>
+      </div>
+      <button class="btn" type="submit">Send reply</button>
+      <!-- Front-end preview only: replies are not stored or sent anywhere yet. Wire to your form service, then remove this note. -->
+      <p class="fine-note">Preview form: replies are not sent anywhere yet.</p>
+    </form>
+
+    <div class="thanks" id="thanks" hidden aria-live="polite">
+      <div class="vid"><video id="thanksVideo" muted playsinline preload="none" poster="assets/doors-poster.webp" aria-hidden="true"><source src="assets/doors-video.mp4" type="video/mp4"></video></div>
+      <h3 id="thanksTitle">Thank you</h3>
+      <p id="thanksText"></p>
+      <button class="again" id="again" type="button">Edit my reply</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <img class="band" src="assets/band-roses.webp" alt="" width="720" height="234" loading="lazy" decoding="async">
+  <div class="names">Amer <span>&amp;</span> Andia</div>
+  <div class="date">22 November 2026</div>
+  <small>With love, Amer &amp; Andia. Venue, times and dates are samples until confirmed.</small>
+</footer>
+
+<script>
+window.CFG={date:'2026-11-22T18:00:00',introMs:8000,endDelay:400,skippable:true,yesText:'We are delighted, and cannot wait to celebrate with you.',videoBoth:false};
+(function(){
+  var C=window.CFG||{};
+  var doc=document.documentElement, body=document.body;
+  doc.classList.add('js');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var WEDDING=new Date(C.date||'2026-11-22T18:00:00'); // sample time until confirmed
+  function $(id){return document.getElementById(id)}
+
+  /* ---------- music (never autoplays) ---------- */
+  var bgm=$('bgm'), mBtn=$('music');
+  function setMusic(on){
+    if(!mBtn)return;
+    mBtn.setAttribute('aria-pressed',on?'true':'false');
+    mBtn.setAttribute('aria-label',on?'Pause background music':'Play background music');
+  }
+  function playMusic(){
+    if(!bgm)return;
+    try{bgm.volume=.6;var p=bgm.play();if(p&&p.then)p.then(function(){setMusic(true)},function(){setMusic(false)});else setMusic(true)}catch(e){setMusic(false)}
+  }
+  if(mBtn&&bgm)mBtn.addEventListener('click',function(){
+    if(bgm.paused)playMusic();else{bgm.pause();setMusic(false)}
+  });
+  window.__playMusic=playMusic;
+
+  /* ---------- intro ---------- */
+  var intro=$('intro'), iv=$('introVideo'), heroV=$('heroVideo'), opened=false;
+  function startHero(){try{if(heroV){var p=heroV.play();if(p&&p.catch)p.catch(function(){})}}catch(e){}}
+  function reveal(){
+    if(body.classList.contains('opened'))return;
+    body.classList.add('opened');
+    if(intro)intro.classList.add('gone');
+    doc.classList.remove('locked');
+    window.scrollTo(0,0);
+    startHero();
+    if(iv)setTimeout(function(){try{iv.pause()}catch(e){}},1300);
+    if(window.onOpened)try{window.onOpened()}catch(e){}
+  }
+  window.__reveal=reveal;
+  function openInvite(withMusic){
+    if(opened)return; opened=true;
+    if(withMusic)playMusic();
+    intro.classList.add('opening');
+    if(!iv||reduce||intro.classList.contains('novideo')){setTimeout(reveal,reduce?50:(C.noVideoMs||1200));return}
+    var done=false;function fin(){if(!done){done=true;reveal()}}
+    iv.addEventListener('ended',function(){setTimeout(fin,C.endDelay||150)});
+    iv.addEventListener('error',fin);
+    setTimeout(fin,C.introMs||4200); // safety net if the video stalls or can't play
+    try{var p=iv.play();if(p&&p.catch)p.catch(function(){setTimeout(fin,900)})}catch(e){setTimeout(fin,900)}
+  }
+  if(intro){
+    doc.classList.add('locked');
+    if(iv){
+      iv.addEventListener('error',function(){intro.classList.add('novideo')},true);
+      var s0=iv.querySelector('source'); if(s0)s0.addEventListener('error',function(){intro.classList.add('novideo')});
+    }
+    intro.addEventListener('click',function(e){
+      if(e.target.closest('#openMusic'))return;
+      if(opened){if(C.skippable)reveal();return}
+      openInvite(false);
+    });
+    intro.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target===intro){e.preventDefault();openInvite(false)}});
+    var om=$('openMusic');
+    if(om)om.addEventListener('click',function(e){e.stopPropagation();openInvite(true)});
+  }else{
+    body.classList.add('opened');startHero();
+  }
+
+  /* ---------- countdown ---------- */
+  var cd={};['d','h','m','s'].forEach(function(u){cd[u]=document.querySelector('[data-u="'+u+'"]')});
+  var note=$('countNote');
+  function pad(n){return String(n).padStart(2,'0')}
+  function tick(){
+    if(!cd.d)return;
+    var ms=WEDDING-Date.now();
+    if(ms<=0){['d','h','m','s'].forEach(function(u){cd[u].textContent='00'});if(note)note.textContent='Today we celebrate!';return}
+    cd.d.textContent=pad(Math.floor(ms/864e5));
+    cd.h.textContent=pad(Math.floor(ms/36e5)%24);
+    cd.m.textContent=pad(Math.floor(ms/6e4)%60);
+    cd.s.textContent=pad(Math.floor(ms/1e3)%60);
+  }
+  tick();setInterval(tick,1000);
+
+  /* ---------- scroll reveals ---------- */
+  var items=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){io.observe(el)});
+  }else items.forEach(function(el){el.classList.add('show')});
+
+  /* ---------- rsvp (front-end preview only) ---------- */
+  var form=$('rsvpForm');
+  if(form){
+    var thanks=$('thanks'), tv=$('thanksVideo');
+    var cnt=$('g-count'), gBox=$('guestsBox');
+    function clamp(){var v=parseInt(cnt.value,10);if(isNaN(v)||v<1)v=1;if(v>10)v=10;cnt.value=v}
+    $('minus').addEventListener('click',function(){cnt.value=(parseInt(cnt.value,10)||1)-1;clamp()});
+    $('plus').addEventListener('click',function(){cnt.value=(parseInt(cnt.value,10)||1)+1;clamp()});
+    cnt.addEventListener('change',clamp);
+    [].forEach.call(form.querySelectorAll('input[name=att]'),function(r){
+      r.addEventListener('change',function(){gBox.style.display=$('att-yes').checked?'':'none'});
+    });
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var nameEl=$('g-name'), name=nameEl.value.trim();
+      if(!name){nameEl.focus();nameEl.setAttribute('aria-invalid','true');nameEl.placeholder='Please tell us your name';return}
+      nameEl.removeAttribute('aria-invalid');
+      var yes=$('att-yes').checked, first=name.split(/\s+/)[0];
+      $('thanksTitle').textContent=yes?'Thank you, '+first:'We will miss you, '+first;
+      $('thanksText').textContent=yes?(C.yesText||'We cannot wait to celebrate with you.'):(C.noText||'Thank you for letting us know. You will be in our hearts on the day.');
+      form.hidden=true;thanks.hidden=false;
+      if(tv){tv.parentNode.style.display=yes||C.videoBoth?'':'none';
+        if(yes||C.videoBoth){try{tv.currentTime=0;var p=tv.play();if(p&&p.catch)p.catch(function(){})}catch(err){}}}
+      thanks.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+    });
+    $('again').addEventListener('click',function(){
+      thanks.hidden=true;form.hidden=false;try{if(tv)tv.pause()}catch(e){}
+      form.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
